@@ -15,7 +15,10 @@ export interface storeIn {
   user: userIn;
 }
 const INITAL_STATE: storeIn = {
-  books: [{ author: "riza", price: 210, title: "I don't Know" }],
+  books: [
+    { author: "riza", price: 210, title: "I don't Know" },
+    { author: "Memed", price: 110, title: "We Just Trying to Know" },
+  ],
   user: {
     family: "Guli zade",
     name: "Riza",
@@ -24,15 +27,14 @@ const INITAL_STATE: storeIn = {
 };
 export const storeReducer = (
   state: storeIn = INITAL_STATE,
-  action: BookAction
+  action: UserAction
 ) => {
   switch (action.type) {
-    case "BOOK_LIST":
+    case BOOK_LIST:
       return state;
-    //   return {
-    //     ...state,
-    //     state: [...state.books, action.payload],
-    //   };
+    case ADD_BOOK:
+      console.log(action.payload);
+      return { ...state, books: [...state.books, action.payload] };
     // case BOOK_LIST:
     //   return state.books;
 
