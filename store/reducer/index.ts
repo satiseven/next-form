@@ -28,15 +28,15 @@ const INITAL_STATE: storeIn = {
 export const storeReducer = (
   state: storeIn = INITAL_STATE,
   action: UserAction
-) => {
+): storeIn => {
   switch (action.type) {
     case BOOK_LIST:
       return state;
     case ADD_BOOK:
-      console.log(action.payload);
-      return { ...state, books: [...state.books, action.payload] };
-    // case BOOK_LIST:
-    //   return state.books;
+      return {
+        ...state,
+        books: [...state.books, action.payload as booksIn],
+      };
 
     default:
       return state;
