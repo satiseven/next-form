@@ -6,9 +6,15 @@ import { useSelector } from "react-redux";
 import { storeIn } from "../store/reducer";
 import styles from "../styles/Home.module.css";
 import { AddBook } from "../store/components/AddBook";
+import { useInputs } from "./components/useInputs";
+import { useEffect } from "react";
 const Home: NextPage = () => {
   const books = useSelector<storeIn, storeIn["books"]>((state) => state.books);
   console.log(books);
+  const [inputs, setInputs] = useInputs();
+  useEffect(() => {
+    console.log(inputs);
+  }, [inputs]);
 
   return (
     <div className={styles.container}>
@@ -19,6 +25,36 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <AddBook />
+        <div className="mb-4">
+          <label className="block text-green-700 text-sm font-bold mb-2">
+            Input Name
+          </label>
+          <input
+            onChange={setInputs}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="name"
+            type="text"
+            placeholder="Name"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-green-700 text-sm font-bold mb-2">
+            Input FAmily
+          </label>
+          <input
+            onChange={setInputs}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="family"
+            type="text"
+            placeholder="FAmily"
+          />
+        </div>
+        {/* <ul>
+          {inputs.map((item, index) => {
+            return <li key={`input_li_${index}`}>{index}</li>;
+          })}
+        </ul> */}
+
         <ul style={{ listStyle: "outside" }}>
           {books.map((item, index) => {
             return <li key={index}>{item.title}</li>;
