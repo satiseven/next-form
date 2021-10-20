@@ -1,5 +1,6 @@
+import { LOGIN_TEST, UserAction } from "../../../types/actions/userType";
 import { User, userState } from "../../../types/user";
-import { LOGIN_TEST, UserAction } from "../actions";
+
 const initalState: userState = {
   date: {} as User,
   error: "",

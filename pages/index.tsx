@@ -3,12 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../styles/Home.module.css";
-import { useInputs } from "./components/useInputs";
 import { useEffect } from "react";
-import { LOGIN_TEST } from "./store/actions";
+import { LOGIN_TEST } from "../types/actions/userType";
+
 const Home: NextPage = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch({ type: LOGIN_TEST });
   }, []);
