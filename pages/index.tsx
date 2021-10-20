@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../styles/Home.module.css";
 import { useInputs } from "./components/useInputs";
 import { useEffect } from "react";
+import { LOGIN_TEST } from "./store/actions";
 const Home: NextPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: LOGIN_TEST });
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
