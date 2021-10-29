@@ -1,10 +1,11 @@
 export interface todoIn {
-  title: string;
+  completed: boolean;
   id: number;
-  status: "active" | "possive";
+  title: string;
+  userId: number;
 }
 export interface todoType {
-  todo: todoIn[];
+  todoItems: todoIn[];
 }
 export interface AppState {
   todo: todoType;
