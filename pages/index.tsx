@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAllToDo());
-  }, []);
+  }, [dispatch]);
 
   const { todoItems } = useSelector<AppState, AppState["todo"]>(
     ({ todo }) => todo
@@ -29,8 +29,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         {todoItems && (
           <ul>
-            {Object.entries(todoItems).map(([i, item], index) => {
-              return <li key={index}>{item.title}</li>;
+            {Object.entries(todoItems).map(([i, item]) => {
+              return <li key={i}>{item.title}</li>;
             })}
           </ul>
         )}
