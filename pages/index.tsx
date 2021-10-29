@@ -1,13 +1,33 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
+
 import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState, todoType } from "../types/actions";
+import { ADD_TODO } from "../store/actions";
 
 const Home: NextPage = () => {
+  const tod: todoType = {
+    todo: [
+      {
+        id: 524,
+        status: "active",
+        title: "Title is one",
+      },
+    ],
+  };
   const dispatch = useDispatch();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log("log");
+
+    dispatch({ type: ADD_TODO, payload: tod });
+  }, []);
+
+  const { todo } = useSelector<AppState, AppState["todo"]>(({ todo }) => todo);
+  console.log(todo);
+
   return (
     <div className={styles.container}>
       <Head>
