@@ -10,9 +10,7 @@ const todoReducer = (state = initalTodo, action: todoActions) => {
       };
     case DONE_TODO:
     default:
-      return {
-        state,
-      };
+      return state;
   }
 };
 export default todoReducer;
