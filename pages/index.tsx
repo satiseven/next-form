@@ -17,7 +17,6 @@ const Home: NextPage = () => {
   const { todoItems } = useSelector<AppState, AppState["todo"]>(
     ({ todo }) => todo
   );
-
   return (
     <div className={styles.container}>
       <Head>
