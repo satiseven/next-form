@@ -17,9 +17,7 @@ const Home: NextPage = () => {
     AppState,
     AppState["user"]
   >((state) => state.user);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  useEffect(() => {}, [data]);
   return (
     <div className={styles.container}>
       <Head>
