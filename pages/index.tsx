@@ -12,6 +12,7 @@ const Home: NextPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTheUsers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { data, page, per_page, total, total_pages } = useSelector<
     AppState,
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
               return (
                 <li key={i}>
                   {" "}
-                  <img src={item.avatar} alt={item.email} />
+                  <Image src={item.avatar} alt={item.email} />
                   {item.id} {item.first_name} - {item.last_name}
                 </li>
               );
