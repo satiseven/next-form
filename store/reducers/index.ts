@@ -5,8 +5,8 @@ import { productReducer } from "./productReducer";
 import { userReducer } from "./userReducer";
 
 export const reducer = combineReducers({
-  user: userReducer,
-  product: productReducer,
-  order: orderReducer,
-  book: bookReducer,
+  users: userReducer,
+  books: bookReducer,
+  products: productReducer,
+  orders: orderReducer,
 });
