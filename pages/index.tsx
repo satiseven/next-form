@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>React Get Book List</title>
+        <title>React Get Book List!!!!</title>
         <meta name="description" content="React Redux Practice !!!!!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
